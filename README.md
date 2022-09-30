@@ -15,3 +15,5 @@ In order to accomplish this, following task will be implemented:
 * Static objects collision checking
 * Path and trajectory generation using cubic spirals
 * Best trajectory selection though a cost function evaluation. This cost function will mainly perform a collision check and a proximity check to bring cost higher as we get closer or collide with objects but maintaining a bias to stay closer to the lane center line
+
+<img src= "results/motion_planner_result.png"/>
