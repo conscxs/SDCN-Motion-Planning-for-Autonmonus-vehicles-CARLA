@@ -78,8 +78,8 @@ double BehaviorPlannerFSM::get_look_ahead_distance(const State& ego_state) {
   // TODO-Lookahead: One way to find a reasonable lookahead distance is to find
   // the distance you will need to come to a stop while traveling at speed V and
   // using a comfortable deceleration.
-  VelocityProfileGenerator vpg;
-  auto look_ahead_distance = vpg.calc_distance(velocity_mag, 0, -_max_accel);
+  VelocityProfileGenerator vp_g;
+  auto look_ahead_distance = vp_g.calc_distance(velocity_mag, 0, -_max_accel);
   
 
   // LOG(INFO) << "Calculated look_ahead_distance: " << look_ahead_distance;
@@ -149,8 +149,9 @@ State BehaviorPlannerFSM::state_transition(const State& ego_state, State goal,
       //          << goal.location.y;
 
       // TODO-goal speed at stopping point: What should be the goal speed??
-      goal.velocity.x = 0.0;  // <- Fix This
-      goal.velocity.y = 0.0;  // <- Fix This
+        
+      goal.velocity.x = 0.0;  
+      goal.velocity.y = 0.0;  
       goal.velocity.z = 0.0;
 
     } else {
